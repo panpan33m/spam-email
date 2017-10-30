@@ -1,0 +1,24 @@
+TestFile.number_correct (TestFile.open_file "data/RCV1.small_train.txt")
+(TestFile.open_file "data/RCV1.small_test.txt");
+small - (5,8) success rate = 5/8 = 62.5%
+
+TestFile.number_correct (TestFile.open_file "data/RCV1.medium_train.txt")
+(TestFile.open_file "data/RCV1.medium_test.txt");
+medium - (680,808) success rate = 680/808 = 84.2%
+
+TestFile.number_correct (TestFile.open_file "data/RCV1.big_train.txt")
+(TestFile.open_file "data/RCV1.big_test.txt");
+big - (70122,78899) success rate = 70122/78899 = 88.9%
+
+
+mismatched size:
+TestFile.number_correct (TestFile.open_file "data/RCV1.big_train.txt")
+= (TestFile.open_file "data/RCV1.small_test.txt");
+
+
+
+comment: 1) When the train and test size are relatively the same, the bigger size
+         will result in a higher accuracy of predicting.
+         2) When the training data is significantly larger than the test data,
+         the prediction gets more accurate as well, since it means that there are
+         more samples to refer.
